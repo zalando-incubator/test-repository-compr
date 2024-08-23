@@ -1,0 +1,15 @@
+version: "2017-09-20"
+
+pipeline:
+- id: test
+  vm_config:
+    type: linux
+    image: "cdp-runtime/go"
+  type: script
+  when:
+    branch: master
+    event: push
+  commands:
+  - desc: Vulnerability & capability check
+    cmd: |
+      echo test
